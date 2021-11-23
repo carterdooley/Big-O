@@ -5,8 +5,11 @@
 */
 
 //Code here
-code
 
+let me = {
+  name: 'Carter',
+  age: 21
+}
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -17,13 +20,19 @@ code
 
 //Code here
 
+let dog = {
+  name: 'Joe',
+  color: 'Black',
+  age: 14,
+  goodboy: true
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
@@ -31,7 +40,7 @@ code
 
 //Code here
 
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -41,6 +50,14 @@ code
 
 //Code here
 
+let favoriteThings = {
+  band: 'Red Hot Chilli Peppers',
+  food: 'Fried Rice',
+  person: 'Jess',
+  book: 'Angels and Demons',
+  movie: 'Pupl Fiction',
+  holiday: 'Birthday'
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,6 +65,8 @@ code
 
 //Code here
 
+favoriteThings.car = 'f150'
+favoriteThings.show = 'Game of Thrones'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -56,6 +75,9 @@ code
 
 //Code here
 
+favoriteThings.food = 'Chicken Nuggets'
+favoriteThings.book = 'Harry Potter'
+console.log(favoriteThings.book)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -74,6 +96,7 @@ var carDetails = {
 
 //Code Here
 
+let {color, make, model, year} = carDetails
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -86,7 +109,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  let {firstName: Carter, lastName: Dooley, title: Mr} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -107,6 +130,28 @@ function greeting( obj ) {
 //Code Here
 
 
+let population = {
+  Utah: 128,
+  California: 384,
+  Texas: 345,
+  Arizona: 984
+}
+const {Utah, California, Texas, Arizona} = population
+
+function totalPopulation (obj) {
+
+sumOfPopulation = Utah + California + Texas + Arizona
+return sumOfPopulation
+
+
+}
+console.log(totalPopulation(population))
+
+
+
+
+
+
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -119,6 +164,24 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+let nutritionInfo = {
+  carb: "The Fuel",
+  protien: "The building materials",
+  fat: "Stored fuel"
+}
+
+const {carb, protien, fat} = nutritionInfo
+
+let nutritionArr = []
+
+function ingredients (obj) {
+  for (key in nutritionInfo) {
+    nutritionArr.push(nutritionInfo[key])
+  } return nutritionArr
+}
+
+console.log(ingredients(nutritionInfo))
 
 
 
@@ -142,6 +205,9 @@ var user = {
 
 //Code Here
 
+user.email = 'bryan.smith@devmounta.in'
+user.name = 'Bryan G. Smith'
+
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,6 +215,9 @@ var user = {
 */
 
 //Code Here
+
+delete user.age
+
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -160,7 +229,16 @@ var user = {
 
 //Code here
 
+class cat{
+  constructor(name, age, color){
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
 
+let Albus = new cat("Albus", 1, "Spotted")
+console.log(Albus.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -171,6 +249,21 @@ var user = {
 */
 
 //Code here
+class wizzard{
+  constructor(name1 , age, favoriteSpell){
+    this.name1 = name1
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+  castSpell(){
+    console.log(`${this.name1} has cast ${this.favoriteSpell}`)
+  }
+}
+
+let dumbledoor = new wizzard('Dumbledoor', 550, 'Avada Cadabra')
+
+dumbledoor.castSpell()
+
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -197,6 +290,26 @@ var user = {
 
 //Code Here
 
+class phone{
+  constructor(brand, model, storage, color, price){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.soldProperties = false
+    
+  }
+  sell(){
+    this.soldproperties = true
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice){
+    this.price = newPrice
+    console.log(this.price)
+  }
+}
+
   
 /*
     Next make three new phone instances using your class.
@@ -210,6 +323,8 @@ var user = {
 
 //Code Here
 
+let iphone = new phone('Apple', 'Iphone 34', 128, 'Rainbow', 99999999)
+let samsung = new phone('Samsung', 'Galaxy 56', 256, 'Transparent', 96)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -219,6 +334,9 @@ var user = {
 
 //Code Here 
 
+iphone.changePrice(555555)
+
+
 
 /*
   Now call the sell method on one of your other phone objects
@@ -227,7 +345,8 @@ var user = {
 */
 
 //Code Here 
-
+samsung.sell()
+console.log(samsung.soldProperties)
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -246,7 +365,8 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
+let colorsCopy = colors
+console.log(colorsCopy)
 
 
 /*
@@ -275,7 +395,9 @@ const shippingInfo = {
 
 //Code Here
 
-
+let helensInfo = Object.assign(contactInfo, shippingInfo)
+console.log(helensInfo
+  )
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
 
@@ -293,13 +415,26 @@ const shippingInfo = {
 
 //Code Here 
 
+class vehicle{
+  constructor(capacity, color, milage){
+    this.capacity = capacity
+    this.color = color
+    this.milage = milage
+  }
+  move(miles){
+    this.milage = miles + this.milage
+    console.log(this.milage)
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
+
 //Code Here
 
+let f150 = new vehicle(4, 'red', 130000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
